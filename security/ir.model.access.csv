@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_emex51_module_emex51_module,emex51_module.emex51_module,model_emex51_module_emex51_module,,1,0,0,0
