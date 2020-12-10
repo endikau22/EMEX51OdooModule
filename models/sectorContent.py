@@ -4,10 +4,10 @@
 
 from odoo import models,fields
 #Esto es como se declara una clase en Phyton. Esta clase hereda todos los atributos de Model.
-class Existence (models.Model):
+class SectorContent (models.Model):
     #Esta es la referencia odoo. Como project.task. Task es una clase del modulo project.
     #Nuestro modulo en odoo es emex51.
-    _name = 'emex51.existence'
+    _name = 'emex51.sectorcontent'
     
     #El atributo string es como se ve en el form de la view de odoo. id lo crea odoo. Es un field reserved.
     name = fields.Char(required = True, string = "Nombre")
