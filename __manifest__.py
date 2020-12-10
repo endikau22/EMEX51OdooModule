@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "EMEX51Module",
+    'name': "Area 51",
 
     'summary': """
         Gestion de los empleados del area 51""",
