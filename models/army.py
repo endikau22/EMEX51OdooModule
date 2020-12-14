@@ -8,7 +8,7 @@ class Army (models.Model):
     #Esta es la referencia odoo. Como project.task. Task es una clase del modulo project.
     #Nuestro modulo en odoo es emex51.
     _name = 'emex51.army'
-    _inherit = 'emex51.existence'
+    _inherit = 'emex51.sectorcontent'
     
     # Declaración de los atributos de tipo básico de en Odoo.
     

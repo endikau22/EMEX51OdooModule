@@ -8,7 +8,7 @@ class Creature (models.Model):
     #Esta es la referencia odoo. Como project.task. Task es una clase del modulo project.
     #Nuestro modulo en odoo es emex51.
     _name = 'emex51.creature'
-    _inherit = 'emex51.existence'
+    _inherit = 'emex51.sectorcontent'
     
     # Declaración de los atributos de tipo básico de en Odoo. id lo crea odoo. Es un field reserved.
     species = fields.Char(required = True, string = "Especie")
