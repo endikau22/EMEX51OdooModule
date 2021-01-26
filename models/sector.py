@@ -2,7 +2,8 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models,fields
+from odoo import models,fields,api
+from odoo.exceptions import ValidationError
 #Esto es como se declara una clase en Phyton. Esta clase hereda todos los atributos de Model.
 class Sector (models.Model):
     #Esta es la referencia odoo. Como project.task. Task es una clase del modulo project.
@@ -22,3 +23,18 @@ class Sector (models.Model):
     #En un sector hay varias existencias y una existencia esta en un sector.
 # Estas pueden ser armas o criaturas
     content = fields.One2many('emex51_module.sectorcontent','sector',string="Contenido")
+
+    _sql_constraints = [
+        ('name_unique',
+         'UNIQUE(name)',
+         "El nombre del sector debe ser unico"),
+    ]
+    
+    
+    @api.constrains('name')
+    def _check_name_length(self):
+        for sector in self:
+            if len(sector.name)<3:
+                raise ValidationError('El nombre es muy corto, debe tener al menos 3 caracteres')
+            elif len(sector.name)>20:
+                raise ValidationError('El nombre es muy largo, debe tener menos de 20 caracteres')

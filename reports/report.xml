@@ -1,0 +1,28 @@
+<odoo>
+    <template id="module_boss_report_template">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <h3 t-field="doc.email"/>
+                        <ul>
+                            <t t-foreach="doc.employees" t-as="empleado">
+                                <li>
+                                    <span t-field="empleado.name"/>
+                                </li>
+                            </t>
+                        </ul>                        
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <report id="module_boss_report"
+                model="emex51_module.boss"
+                string="Boss Report"
+                report_type="qweb-pdf"
+                name="emex51_module.module_boss_report_template"
+                file="module_boss_report_template"
+    />
+</odoo>

@@ -29,7 +29,7 @@
                           <group>
                             <field name="wage"/>
                             <field name="jobPosition"/>
-                            <field name="boss" readonly = "1"/>
+                            <field name="boss"/>
                           </group>                
                       </group>
                       <notebook colspan = "4">
