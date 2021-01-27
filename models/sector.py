@@ -23,12 +23,6 @@ class Sector (models.Model):
     #En un sector hay varias existencias y una existencia esta en un sector.
 # Estas pueden ser armas o criaturas
     content = fields.One2many('emex51_module.sectorcontent','sector',string="Contenido")
-
-    _sql_constraints = [
-        ('name_unique',
-         'UNIQUE(name)',
-         "El nombre del sector debe ser unico"),
-    ]
     
     
     @api.constrains('name')

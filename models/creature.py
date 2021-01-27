@@ -15,12 +15,6 @@ class Creature (models.Model):
     species = fields.Char(required = True, string = "Especie")
     
     sector= fields.Many2one ('emex51_module.sector',ondelete = 'cascade', string = "Sector", domain =[('tipo','=','creature')])
-
-    _sql_constraints = [
-        ('name_unique',
-         'UNIQUE(name)',
-         "El nombre de la criatura debe ser unico"),
-    ]
             
     @api.constrains('species')
     def _check_species_length(self):
