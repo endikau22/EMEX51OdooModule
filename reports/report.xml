@@ -2,7 +2,9 @@
     <template id="module_boss_report_template">
         <t t-call="report.html_container">
             <t t-call="report.external_layout">
-                <div class="page">
+                <t t-value="bool(docs.mapped('id'))" t-set="show_boss"/>
+                <t t-value="True" t-set="show_bosses"/>
+                <div class="page" style="padding-top:100px">
                     <div class="oe_structure"/>
                     <t t-foreach="docs" t-as="b">
                         <div class="row">
@@ -12,34 +14,38 @@
                                 </h2>
                             </div>
                         </div>
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>Login</th>
-                                    <th>Email</th>
-                                    <th>Sueldo</th>
-                                    <th>Posicion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-foreach="b.employees" t-as="e">
-                                    <tr>
-                                        <td>
-                                            <span t-field="e.login"/>
-                                        </td>
-                                        <td>
-                                            <span t-field="e.email"/>
-                                        </td>
-                                        <td>
-                                            <span t-field="e.wage"/>
-                                        </td>
-                                        <td>
-                                            <span t-field="e.jobPosition"/>
-                                        </td>
-                                    </tr>
-                                </t>
-                            </tbody>
-                        </table>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Login</th>
+                                            <th>Email</th>
+                                            <th>Sueldo</th>
+                                            <th>Posicion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="b.employees" t-as="e">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="e.login"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="e.email"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="e.wage"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="e.jobPosition"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </t>
                 </div>
             </t>

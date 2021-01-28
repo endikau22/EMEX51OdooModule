@@ -23,8 +23,6 @@
 
     # always loaded
     'data': [
-        #'security/ir.model.access.csv',
-        #'security/security.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/emex51.xml',
@@ -37,6 +35,8 @@
         'views/sectorviews.xml',
         'views/menu.xml',
         'reports/report.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
     'demo': [

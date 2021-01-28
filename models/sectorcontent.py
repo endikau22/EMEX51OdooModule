@@ -2,6 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
+#Endika Ubierna
 from odoo import models,fields,api
 from odoo.exceptions import ValidationError
 #Esto es como se declara una clase en Phyton. Esta clase hereda todos los atributos de Model.
