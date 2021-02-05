@@ -27,9 +27,13 @@
                             <field name="tipo" string="Tipo de Sector"/>
                         </group>
                         <notebook colspan = "4">
-                            <page string="Contenido">
-                                <field name="content"/>
-                                Contenido del sector, pueden ser armas o criaturas
+                            <page string="Criaturas">
+                                <field name="creatures"/>
+                                Las creaturas del sector.
+                            </page>
+                            <page string="Armamento">
+                                <field name="armys"/>
+                                Las armas del sector.
                             </page>
                             <page string="Visitantes">
                                 <field name="visitors"/>

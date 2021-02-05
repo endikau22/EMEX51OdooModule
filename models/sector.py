@@ -22,7 +22,8 @@ class Sector (models.Model):
     visitors = fields.Many2many('emex51_module.visitor',string="Visitantes")
     #En un sector hay varias existencias y una existencia esta en un sector.
 # Estas pueden ser armas o criaturas
-    content = fields.One2many('emex51_module.sectorcontent','sector',string="Contenido")
+    creatures = fields.One2many('emex51_module.creature','sector',string="Criaturas")
+    armys = fields.One2many('emex51_module.army','sector',string="Armas")
     
     
     @api.constrains('name')
@@ -32,3 +33,14 @@ class Sector (models.Model):
                 raise ValidationError('El nombre es muy corto, debe tener al menos 3 caracteres')
             elif len(sector.name)>20:
                 raise ValidationError('El nombre es muy largo, debe tener menos de 20 caracteres')
+
+    @api.constrains('tipo')
+    def _tipo(self):
+        for sector in self:
+            if len(sector.creatures)>0:
+                if sector.tipo == 'army':
+                    raise ValidationError('El sector contiene criaturas, no puede ser de tipo army')
+            if len(sector.armys)>0:
+                if sector.tipo == 'creature':
+                    raise ValidationError('El sector contiene armas, no puede ser de tipo creature')
+                
